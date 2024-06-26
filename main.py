@@ -26,8 +26,11 @@ with open("lib/library.json") as vlib:
 
 # Load member list
 members_db={}
-with open("lib/members.json") as memreg:
-    members_db = json.load(memreg)
+try:
+    with open("lib/members.json") as memreg:
+        members_db = json.load(memreg)
+except:
+    members_db={"members":{}}
 members_uids=[]
 for i in members_db["members"].keys():
     members_uids.append(members_db["members"][i]["uid"])
