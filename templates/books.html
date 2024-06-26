@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book_name }} - {{ book_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+</head>
+
+<body>
+    <header>
+        <h1>{{ library_name }}: {{ book_name }} (<b>{{ book_id }}</b>)</h1>
+    </header>
+    <nav>
+        <a href="{{ home_page }}">Home</a>
+        <a href="#">About</a>
+        <div class="book-browser">
+            <a class="book_ref">
+                <img src="{{url_for('static',filename=book_lib[book_id][cover_pic])}}" style="height: 100%;width:min(150px,100%);"/>
+                <div class="authorname">എഴുതിയത് : {{book_lib[book_id]["author"]}}</div>
+                <div>വിഭാഗം: {%for l in (book_lib[book_id]["categories"])%}{{db["categories"][l]}}, {%endfor%}</div>
+                <div>വിഷയങ്ങൾ: {%for l in (book_lib[book_id]["subjects"])%}{{db["subjects"][l]}}, {%endfor%}</div>
+                <div class="code"><b>CODE:{{book_id}}</b></div>
+                <div><span class="book_name">{{book_lib[book_id][name]}}</span><span class="{{isavailable}}available availability_circle">{%if isavailable%} Not Available{%else%} Available{%endif%}</span></div>
+                <form action="./{{book_id}}/borrow" >
+                    {%if isavailable %}
+                    <input type="submit" value="Borrow" disabled> {%else%} <input type="submit" value="Borrow" > {%endif%}
+                </form>
+            </a>
+        </div>
+    </nav>
+</body>
+
+</html>

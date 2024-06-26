@@ -1,0 +1,123 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+nav a:hover {
+    background-color: #555;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.search-bar {
+    text-align: center;
+    padding: 20px 0;
+}
+.search-bar input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 0px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.book-browser {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    text-align: center;
+}
+.book-browser a {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+.book-browser a:hover {
+    background-color: #ddd;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+a.book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a.book > span{
+    margin:5px;
+}
+.availability_circle{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.available{
+    color:  green;
+}
+.navailable{
+    
+    color: red;
+}
+.authorname,.code{
+    color: #999;
+}
+a.book_ref{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:80vw;
+    height:80vh;
+    box-shadow: #000 5px ;
+    transition: all 300ms ease-in-out;
+}
+a.book_ref:hover{
+    width: 82vw;
+    height:82vh;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register book</title>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Book Code" name="code">
+        <input type="text" placeholder="Name of the book" name="book_name">
+        <input type="text" placeholder="Author's name" name="author_name">
+        <!-- <input type="file" name="pic_cover"> -->
+        <select name="genres" multiple>
+            {%for i in database["genres"].keys()%}
+            <option value="{{i}}">{{database["genres"][i]}}</option>
+            {%endfor%}
+        </select>
+        <select name="subjects" multiple>
+            {%for i in database["subjects"].keys()%}
+            <option value="{{i}}">{{database["subjects"][i]}}</option>
+            {%endfor%}
+        </select>
+        <select name="categories" multiple>
+            {%for i in database["categories"].keys()%}
+            <option value="{{i}}">{{database["categories"][i]}}</option>
+            {%endfor%}
+        </select>
+        <textarea name="keywords" placeholder="keywords"></textarea>
+        <input type="text" name="auth_id" placeholder="Authentication token">
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>

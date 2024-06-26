@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book_name }} - {{ book_id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+</head>
+
+<body>
+    <header>
+        <h1>{{ library_name }}: {{ book_name }} (<b>{{ book_id }}</b>)</h1>
+    </header>
+    <nav>
+        <a href="{{ home_page }}">Home</a>
+        <a href="#">About</a>
+        <div class="book-browser">
+            <a class="book_ref">
+                <form action="POST">
+                    <input type="text" placeholder="Name of the borrower" name="name"></input>
+                </form>
+            </a>
+        </div>
+    </nav>
+</body>
+
+</html>

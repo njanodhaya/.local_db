@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register book</title>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Book Code" name="code">
+        <select name="shelf">
+            {%for i in database.keys()%}
+            <option value="{{i}}">{{database[i]["name"]}}</option>
+            {%endfor%}
+        </select>
+        <select name="rack">
+            {%for i in database["s8"]["racks"].keys()%}
+            <option value="{{i}}">{{i}}</option>
+            {%endfor%}
+        </select>
+        <input type="text" name="auth_id" placeholder="Authentication token">
+        <input type="submit" value="Register">
+    </form>
+</body>
+
+</html>

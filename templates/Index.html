@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{library_name}} - Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        {% if not search_word %}
+        <h1>{{library_name}}</h1>
+        {%else%}
+        <h1>{{library_name}} - search : {{search_word}}</h1>
+        {%endif%}
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </nav>
+    <div class="container">
+        <div class="search-bar">
+            <form method="POST" enctype="application/x-www-form-urlencoded">
+                <input type="text" name="search" value="{{search_word}}" placeholder="പുസ്തകങ്ങൾ, രചയിതാക്കൾ, വിഭാഗങ്ങൾ എന്നിവയ്ക്കായി തിരയുക...">
+                <input type="submit" class="material-symbols-outlined" value="search" style="margin: auto;">
+            </form>
+        </div>
+        <div class="book-browser">
+            {%for i in book_disp %}
+            <a class="book" href="./book/{{i}}">
+                <img src="{{url_for('static',filename=book_lib[i][cover_pic])}}" style="height: 100%;width:min(260px,100%);"/>
+                <span><span class="book_name">{{book_lib[i][name]}}</span><span class="navailable availability_circle">-0-</span></span>
+                <span class="authorname">എഴുതിയത് : {{book_lib[i][author]}}</span>
+                <span class="code"><b>CODE:{{i}}</b></span>
+            </a>
+            {%endfor%}
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+    
+
+
