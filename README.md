@@ -1,1 +1,2 @@
 # public library catalogue and library management system for njanodhaya library
+ The Current system is built from scratch and may require refining , i you are interested in contributing please contact us [here 📬](mailto:njanodayakolangoad@gmail.com)
